@@ -1,5 +1,6 @@
 // ==UserScript==
 // @name         Obis:Sorter&DarkMode
+// @namespace    https://github.com/Acidooo/obis-dark-mode
 // @version      2.6
 // @description  try to take over the world!
 // @author       Acido
