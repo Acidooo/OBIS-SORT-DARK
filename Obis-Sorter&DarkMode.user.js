@@ -7,6 +7,7 @@
 // @downloadURL   https://github.com/Acidooo/obis-dark-mode/raw/master/Obis-Sorter%26DarkMode.user.js
 // @updateURL     https://github.com/Acidooo/obis-dark-mode/raw/master/Obis-Sorter%26DarkMode.user.js
 // @grant        GM_addStyle
+// @run-at       document-end
 // ==/UserScript==
 /*jshint esversion: 6 */
 
