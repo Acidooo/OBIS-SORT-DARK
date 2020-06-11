@@ -1,7 +1,6 @@
 // ==UserScript==
 // @name         Obis:Sorter&DarkMode
-// @namespace    https://github.com/Acidooo/obis-dark-mode
-// @version      2.7
+// @version      2.8
 // @description  try to take over the world!
 // @author       Acido
 // @match        *://*.ktun.edu.tr/Ogrenci/*
@@ -9,6 +8,8 @@
 // @updateURL     https://github.com/Acidooo/obis-dark-mode/raw/master/Obis-Sorter%26DarkMode.user.js
 // @grant        GM_addStyle
 // ==/UserScript==
+
+
 
 GM_addStyle ( `
 
@@ -98,17 +99,17 @@ background-color: #444;
 background:#444;
 }
 
-
 table-striped{ background:#444; }
 
 /* ANASAYFA */
-profile-info-row:first-child{ background-color: #444; }
+.profile-info-row:first-child{ background-color: #444; }
 .profile-info-row:first-child .profile-info-name, .profile-info-row:first-child .profile-info-value { background-color: #444; }
 .profile-user-info-striped { background-color: #444; }
 .profile-user-info-striped .profile-info-name { background-color: #444;color:#aaa; }
 .profile-info-value{ background-color: #444; }
 .alert-danger { background-color: #444;color: #ff1414; }
-.btn.btn-white, .btn.btn-white.no-hover:active, .btn.btn-white.no-hover:hover { background-color: #444 }
+.btn.btn-white, .btn.btn-white.no-hover:active, .btn.btn-white.no-hover:hover {    background-color: #444 !important; }
+.profile-info-value.text-center{ background-color: #444 !important; color:#7fb3f3 !important;}
 
 ` );//END GM_addStyle
 
@@ -121,9 +122,9 @@ if(window.location == "http://obis.ktun.edu.tr/Ogrenci/SonYilNotlari" || window.
             //             console.log(table.rows[r].cells[4].innerHTML)
             if( parseInt(table.rows[r].cells[4].innerHTML) != null )
             {
-                var sonuc = parseInt( table.rows[r].cells[4].innerHTML) * 0.4               
-                var aa = (82 - sonuc)/0.6;
-                var cc = (50 - sonuc)/0.6;
+                var sonuc = parseInt( table.rows[r].cells[4].innerHTML) * 0.4
+                var aa = (82 - sonuc) / 0.6;
+                var cc = (50 - sonuc) / 0.6;
                 if(!isNaN(sonuc)){
                     table.rows[r].cells[5].innerHTML = parseInt(Math.round(sonuc)).toString()
                     table.rows[r].cells[6].innerHTML = parseInt(Math.round(aa)).toString()
