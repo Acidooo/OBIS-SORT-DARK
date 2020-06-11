@@ -183,8 +183,6 @@ function sortFilter01(){
 
 // var element = document.getElementById("dynamic-table");
 
-
-
 function setup(table) {
     var body = table.querySelector("tbody");
     var head = table.querySelector("thead");
