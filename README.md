@@ -1,4 +1,5 @@
 # Obis Dark Mode
+Tampermonkey ile tarayıcılarda kullanmak için yazılmış bir scripttir.
 
 ## Yükleme Talimatları
 1. Tampermonkey için [tıklayın](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo) ve yükleyin. 
