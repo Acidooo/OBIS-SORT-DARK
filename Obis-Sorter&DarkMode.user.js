@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Obis:Sorter&DarkMode
-// @version      2.3
+// @version      2.5
 // @description  try to take over the world!
 // @author       Acido
 // @match        *://*.ktun.edu.tr/Ogrenci/*
@@ -8,67 +8,6 @@
 // @updateURL     https://github.com/Acidooo/obis-dark-mode/raw/master/Obis-Sorter%26DarkMode.user.js
 // @grant        GM_addStyle
 // ==/UserScript==
-
-
-var url = window.location;
-var table = document.getElementById('dynamic-table')
-
-if(window.location == "http://obis.ktun.edu.tr/Ogrenci/SonYilNotlari" || window.location == "http://obis2.ktun.edu.tr/Ogrenci/SonYilNotlari" || window.location == "http://obis3.ktun.edu.tr/Ogrenci/SonYilNotlari" ){
-    for (var r = 0, n = table.rows.length; r < n; r++) {
-        for (var c = 0, m = table.rows[r].cells.length; c < m; c++) {
-            //             console.log(table.rows[r].cells[4].innerHTML)
-            if( parseInt(table.rows[r].cells[4].innerHTML) != null )
-            {
-                var sonuc = parseInt( table.rows[r].cells[4].innerHTML) * 0.4
-                //             console.log(sonuc)
-                var aa = (82 -sonuc)/0.6;
-                var cc = (50 -sonuc)/0.6;
-                if(!isNaN(sonuc)){
-                    table.rows[r].cells[5].innerHTML = parseInt(sonuc).toString()
-                    table.rows[r].cells[6].innerHTML = parseInt(aa).toString()
-                    table.rows[r].cells[7].innerHTML = parseInt(cc).toString()
-                }
-            }
-        }
-    }
-    var vize = document.getElementById("dynamic-table").rows[0].cells;
-    vize[5].innerHTML = "%40";
-    vize[6].innerHTML = "AA Almak İçin"
-    vize[7].innerHTML = "CC Almak İçin"
-}
-
-
-try {
-  var elements = document.querySelectorAll('[id=dynamic-table]');
-    // console.log(element)
-    for(var i=0; i<elements.length; i++) {
-        elements[i].classList.remove("table-striped");
-    }
-}
-catch(err) {
-
-}
-
-
-
-/* document.getElementById("dynamic-table").style.backgroundImage="url('https://image.prntscr.com/image/RGfyz2IvSViDS4gsa8Pvvg.png')";
-
-function sortFilter01(){
-    const getCellValue = (tr, idx) => tr.children[idx].innerText || tr.children[idx].textContent;
-
-    const comparer = (idx, asc) => (a, b) => ((v1, v2) =>
-                                              v1 !== '' && v2 !== '' && !isNaN(v1) && !isNaN(v2) ? v1 - v2 : v1.toString().localeCompare(v2)
-                                             )(getCellValue(asc ? a : b, idx), getCellValue(asc ? b : a, idx));
-
-    document.querySelectorAll('th').forEach(th => th.addEventListener('click', (() => {
-        const table = th.closest('table');
-        const tbody = table.querySelector('tbody');
-        Array.from(tbody.querySelectorAll('tr'))
-            .sort(comparer(Array.from(th.parentNode.children).indexOf(th), this.asc = !this.asc))
-            .forEach(tr => tbody.appendChild(tr) );
-    })));
-} */
-
 
 GM_addStyle ( `
 
@@ -168,12 +107,62 @@ profile-info-row:first-child{ background-color: #444; }
 .profile-info-value{ background-color: #444; }
 .alert-danger { background-color: #444;color: #ff1414; }
 
+` );//END GM_addStyle
+
+var url = window.location;
+var table = document.getElementById('dynamic-table')
+
+if(window.location == "http://obis.ktun.edu.tr/Ogrenci/SonYilNotlari" || window.location == "http://obis2.ktun.edu.tr/Ogrenci/SonYilNotlari" || window.location == "http://obis3.ktun.edu.tr/Ogrenci/SonYilNotlari" ){
+    for (var r = 0, n = table.rows.length; r < n; r++) {
+        for (var c = 0, m = table.rows[r].cells.length; c < m; c++) {
+            //             console.log(table.rows[r].cells[4].innerHTML)
+            if( parseInt(table.rows[r].cells[4].innerHTML) != null )
+            {
+                var sonuc = parseInt( table.rows[r].cells[4].innerHTML) * 0.4
+                //             console.log(sonuc)
+                var aa = (82 -sonuc)/0.6;
+                var cc = (50 -sonuc)/0.6;
+                if(!isNaN(sonuc)){
+                    table.rows[r].cells[5].innerHTML = parseInt(sonuc).toString()
+                    table.rows[r].cells[6].innerHTML = parseInt(aa).toString()
+                    table.rows[r].cells[7].innerHTML = parseInt(cc).toString()
+                }
+            }
+        }
+    }
+    var vize = document.getElementById("dynamic-table").rows[0].cells;
+    vize[5].innerHTML = "%40";
+    vize[6].innerHTML = "AA Almak İçin"
+    vize[7].innerHTML = "CC Almak İçin"
+}
 
 
-` );
+try {
+  var elements = document.querySelectorAll('[id=dynamic-table]');
+    // console.log(element)
+    for(var i=0; i<elements.length; i++) {
+        elements[i].classList.remove("table-striped");
+    }
+}
+catch(err) {}
 
+/* document.getElementById("dynamic-table").style.backgroundImage="url('https://image.prntscr.com/image/RGfyz2IvSViDS4gsa8Pvvg.png')";
 
+function sortFilter01(){
+    const getCellValue = (tr, idx) => tr.children[idx].innerText || tr.children[idx].textContent;
 
+    const comparer = (idx, asc) => (a, b) => ((v1, v2) =>
+                                              v1 !== '' && v2 !== '' && !isNaN(v1) && !isNaN(v2) ? v1 - v2 : v1.toString().localeCompare(v2)
+                                             )(getCellValue(asc ? a : b, idx), getCellValue(asc ? b : a, idx));
+
+    document.querySelectorAll('th').forEach(th => th.addEventListener('click', (() => {
+        const table = th.closest('table');
+        const tbody = table.querySelector('tbody');
+        Array.from(tbody.querySelectorAll('tr'))
+            .sort(comparer(Array.from(th.parentNode.children).indexOf(th), this.asc = !this.asc))
+            .forEach(tr => tbody.appendChild(tr) );
+    })));
+} */
 
 // var x = document.querySelectorAll('[class=profile-info-value text-center]');
 
