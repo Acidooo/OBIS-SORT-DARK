@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Obis:Sorter&DarkMode
-// @version      2.9.3.4
+// @version      2.9.3.5
 // @description  try to take over the world!
 // @author       Acido
 // @match        *://*.ktun.edu.tr/Ogrenci/*
@@ -245,7 +245,7 @@ function setup(table) {
 
     // Get text from column
     function getText(element, index) {
-        return element.querySelectorAll("td")[index].innerText;
+        return element.querySelectorAll("td")[parseInt(index)].innerText;
     }
 
     // Perform sorting of data based on column index
