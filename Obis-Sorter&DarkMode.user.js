@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Obis:Sorter&DarkMode
-// @version      2.9.3.5
+// @version      2.9.3.6
 // @description  try to take over the world!
 // @author       Acido
 // @match        *://*.ktun.edu.tr/Ogrenci/*
@@ -9,9 +9,6 @@
 // @grant        GM_addStyle
 // ==/UserScript==
 /*jshint esversion: 6 */
-/* eslint no-console: ["error", { allow: ["warn", "error"] }] */
-
-
 
 
 GM_addStyle ( `
@@ -123,7 +120,7 @@ table-striped{ background:#444; }
 var url = window.location;
 var table = document.getElementById("dynamic-table");
 
-if(window.location === "http://obis.ktun.edu.tr/Ogrenci/SonYilNotlari" || window.location === "http://obis2.ktun.edu.tr/Ogrenci/SonYilNotlari" || window.location === "http://obis3.ktun.edu.tr/Ogrenci/SonYilNotlari" ){
+if(window.location.href === "http://obis.ktun.edu.tr/Ogrenci/SonYilNotlari" || window.location.href === "http://obis2.ktun.edu.tr/Ogrenci/SonYilNotlari" || window.location.href === "http://obis3.ktun.edu.tr/Ogrenci/SonYilNotlari" ){
     for (var r = 0, n = table.rows.length; r < n; r++) {
         for (var c = 0, m = table.rows[parseInt(r)].cells.length; c < m; c++) {
             //             console.log(table.rows[r].cells[4].innerHTML)
@@ -228,15 +225,16 @@ function setup(table) {
             cell.innerHTML = "";
             cell.appendChild(button);
         });
-    }   
-    
+    }
+
+
     function render(sorted) {
         // Debugging
         /* console.log(map.call(sorted, function(row) {
                 return row.querySelectorAll('td')[index].innerText;
-            }));*/    
+            }));*/
         // Clear the table contents
-        body.innerHTML = "";    
+        body.innerHTML = "";
         // Re-inject the sorted rows
         each.call(sorted, function (row) {
             body.appendChild(row);
@@ -291,6 +289,7 @@ function setup(table) {
     }
 }
 
-if(window.location === "http://obis.ktun.edu.tr/Ogrenci/SonYilNotlari" || window.location === "http://obis2.ktun.edu.tr/Ogrenci/SonYilNotlari" || window.location === "http://obis3.ktun.edu.tr/Ogrenci/SonYilNotlari"){
+if(window.location.href === "http://obis.ktun.edu.tr/Ogrenci/SonYilNotlari" || window.location.href === "http://obis2.ktun.edu.tr/Ogrenci/SonYilNotlari" || window.location.href === "http://obis3.ktun.edu.tr/Ogrenci/SonYilNotlari"){
     setup(document.getElementById("dynamic-table"));
 }
+
