@@ -185,20 +185,7 @@ function sortFilter01(){
 
 
 // Update the UI
-function render(sorted) {
-    // Debugging
-    /* console.log(map.call(sorted, function(row) {
-            return row.querySelectorAll('td')[index].innerText;
-        }));*/
 
-    // Clear the table contents
-    body.innerHTML = "";
-
-    // Re-inject the sorted rows
-    each.call(sorted, function (row) {
-        body.appendChild(row);
-    });
-}
 function setup(table) {
     var body = table.querySelector("tbody");
     var head = table.querySelector("thead");
@@ -239,7 +226,22 @@ function setup(table) {
             cell.innerHTML = "";
             cell.appendChild(button);
         });
-    }    
+    }   
+    
+    function render(sorted) {
+        // Debugging
+        /* console.log(map.call(sorted, function(row) {
+                return row.querySelectorAll('td')[index].innerText;
+            }));*/
+    
+        // Clear the table contents
+        body.innerHTML = "";
+    
+        // Re-inject the sorted rows
+        each.call(sorted, function (row) {
+            body.appendChild(row);
+        });
+    }
 
     // Get text from column
     function getText(element, index) {
