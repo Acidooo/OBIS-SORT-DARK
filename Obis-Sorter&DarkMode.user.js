@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Obis:Sorter&DarkMode
-// @version      2.5
+// @version      2.6
 // @description  try to take over the world!
 // @author       Acido
 // @match        *://*.ktun.edu.tr/Ogrenci/*
@@ -118,14 +118,13 @@ if(window.location == "http://obis.ktun.edu.tr/Ogrenci/SonYilNotlari" || window.
             //             console.log(table.rows[r].cells[4].innerHTML)
             if( parseInt(table.rows[r].cells[4].innerHTML) != null )
             {
-                var sonuc = parseInt( table.rows[r].cells[4].innerHTML) * 0.4
-                //             console.log(sonuc)
-                var aa = (82 -sonuc)/0.6;
-                var cc = (50 -sonuc)/0.6;
+                var sonuc = parseInt( table.rows[r].cells[4].innerHTML) * 0.4               
+                var aa = (82 - sonuc)/0.6;
+                var cc = (50 - sonuc)/0.6;
                 if(!isNaN(sonuc)){
-                    table.rows[r].cells[5].innerHTML = parseInt(sonuc).toString()
-                    table.rows[r].cells[6].innerHTML = parseInt(aa).toString()
-                    table.rows[r].cells[7].innerHTML = parseInt(cc).toString()
+                    table.rows[r].cells[5].innerHTML = parseInt(Math.round(sonuc)).toString()
+                    table.rows[r].cells[6].innerHTML = parseInt(Math.round(aa)).toString()
+                    table.rows[r].cells[7].innerHTML = parseInt(Math.round(cc)).toString()
                 }
             }
         }
