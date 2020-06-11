@@ -8,7 +8,7 @@
 // @updateURL     https://github.com/Acidooo/obis-dark-mode/raw/master/Obis-Sorter%26DarkMode.user.js
 // @grant        GM_addStyle
 // ==/UserScript==
-/*jshint esversion: 6 */ 
+/*jshint esversion: 6 */
 
 
 
@@ -106,9 +106,9 @@ table-striped{ background:#444; }
 
 /* ANASAYFA */
 .profile-info-row:first-child{ background-color: #444; }
-.profile-info-row:first-child .profile-info-name, .profile-info-row:first-child .profile-info-value { background-color: #444; }
+.profile-info-row:first-child .profile-info-name, .profile-info-row:first-child .profile-info-value { background-color: #333; }
 .profile-user-info-striped { background-color: #444; }
-.profile-user-info-striped .profile-info-name { background-color: #444;color:#aaa; }
+.profile-user-info-striped .profile-info-name { background-color: #333;color:#aaa; }
 .profile-info-value{ background-color: #444; }
 .alert-danger { background-color: #444;color: #ff1414; }
 .btn.btn-white, .btn.btn-white.no-hover:active, .btn.btn-white.no-hover:hover {    background-color: #444 !important; }
