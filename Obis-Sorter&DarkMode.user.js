@@ -101,7 +101,7 @@ background:#444;
 
 table-striped{ background:#444; }
 
-.alert-info{ backgroud-color: #d7effbd6; }
+.alert-info{ background-color: #d7effbd6; }
 
 /* ANASAYFA */
 .profile-info-row:first-child{ background-color: #444; }
