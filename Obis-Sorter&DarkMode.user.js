@@ -4,6 +4,7 @@
 // @description  try to take over the world!
 // @author       Acido
 // @match        *://*.ktun.edu.tr/Ogrenci/*
+// downloadURL   https://github.com/Acidooo/obis-dark-mode/raw/master/Obis-Sorter%26DarkMode.user.js
 // @grant        GM_addStyle
 // ==/UserScript==
 
