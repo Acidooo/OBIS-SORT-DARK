@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Obis:Sorter&DarkMode
-// @version      2.2.2
+// @version      2.3
 // @description  try to take over the world!
 // @author       Acido
 // @match        *://*.ktun.edu.tr/Ogrenci/*
