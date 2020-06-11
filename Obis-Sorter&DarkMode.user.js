@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Obis:Sorter&DarkMode
-// @version      2.9.1
+// @version      2.9.2
 // @description  try to take over the world!
 // @author       Acido
 // @match        *://*.ktun.edu.tr/Ogrenci/*
@@ -8,6 +8,7 @@
 // @updateURL     https://github.com/Acidooo/obis-dark-mode/raw/master/Obis-Sorter%26DarkMode.user.js
 // @grant        GM_addStyle
 // ==/UserScript==
+/*jshint esversion: 6 */ 
 
 
 
@@ -118,29 +119,29 @@ table-striped{ background:#444; }
 ` );//END GM_addStyle
 
 var url = window.location;
-var table = document.getElementById('dynamic-table')
+var table = document.getElementById("dynamic-table");
 
-if(window.location == "http://obis.ktun.edu.tr/Ogrenci/SonYilNotlari" || window.location == "http://obis2.ktun.edu.tr/Ogrenci/SonYilNotlari" || window.location == "http://obis3.ktun.edu.tr/Ogrenci/SonYilNotlari" ){
+if(window.location === "http://obis.ktun.edu.tr/Ogrenci/SonYilNotlari" || window.location === "http://obis2.ktun.edu.tr/Ogrenci/SonYilNotlari" || window.location === "http://obis3.ktun.edu.tr/Ogrenci/SonYilNotlari" ){
     for (var r = 0, n = table.rows.length; r < n; r++) {
         for (var c = 0, m = table.rows[r].cells.length; c < m; c++) {
             //             console.log(table.rows[r].cells[4].innerHTML)
-            if( parseInt(table.rows[r].cells[4].innerHTML) != null )
+            if( parseInt(table.rows[r].cells[4].innerHTML) !== null )
             {
-                var sonuc = parseInt( table.rows[r].cells[4].innerHTML) * 0.4
+                var sonuc = parseInt( table.rows[r].cells[4].innerHTML) * 0.4;
                 var aa = (82 - sonuc) / 0.6;
                 var cc = (50 - sonuc) / 0.6;
                 if(!isNaN(sonuc)){
-                    table.rows[r].cells[5].innerHTML = parseInt(Math.round(sonuc)).toString()
-                    table.rows[r].cells[6].innerHTML = parseInt(Math.round(aa)).toString()
-                    table.rows[r].cells[7].innerHTML = parseInt(Math.round(cc)).toString()
+                    table.rows[r].cells[5].innerHTML = parseInt(Math.round(sonuc)).toString();
+                    table.rows[r].cells[6].innerHTML = parseInt(Math.round(aa)).toString();
+                    table.rows[r].cells[7].innerHTML = parseInt(Math.round(cc)).toString();
                 }
             }
         }
     }
     var vize = document.getElementById("dynamic-table").rows[0].cells;
     vize[5].innerHTML = "%40";
-    vize[6].innerHTML = "AA Almak İçin"
-    vize[7].innerHTML = "CC Almak İçin"
+    vize[6].innerHTML = "AA Almak İçin";
+    vize[7].innerHTML = "CC Almak İçin";
 }
 
 
@@ -151,7 +152,9 @@ try {
         elements[i].classList.remove("table-striped");
     }
 }
-catch(err) {}
+catch(err) {
+    console.error(err);
+}
 
 /* document.getElementById("dynamic-table").style.backgroundImage="url('https://image.prntscr.com/image/RGfyz2IvSViDS4gsa8Pvvg.png')";
 
@@ -181,9 +184,6 @@ function sortFilter01(){
 // var element = document.getElementById("dynamic-table");
 
 
-if(window.location == "http://obis.ktun.edu.tr/Ogrenci/SonYilNotlari" || window.location == "http://obis2.ktun.edu.tr/Ogrenci/SonYilNotlari" || window.location == "http://obis3.ktun.edu.tr/Ogrenci/SonYilNotlari"){
-    setup(document.getElementById("dynamic-table"));
-}
 
 function setup(table) {
     var body = table.querySelector("tbody");
@@ -292,3 +292,7 @@ function setup(table) {
     }
 }
 
+
+if(window.location == "http://obis.ktun.edu.tr/Ogrenci/SonYilNotlari" || window.location == "http://obis2.ktun.edu.tr/Ogrenci/SonYilNotlari" || window.location == "http://obis3.ktun.edu.tr/Ogrenci/SonYilNotlari"){
+    setup(document.getElementById("dynamic-table"));
+}
