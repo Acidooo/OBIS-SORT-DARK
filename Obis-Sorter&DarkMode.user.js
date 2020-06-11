@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Obis:Sorter&DarkMode
-// @version      2.9.3.8
+// @version      2.9.3.11
 // @description  try to take over the world!
 // @author       Acido
 // @match        *://*.ktun.edu.tr/Ogrenci/*
@@ -82,38 +82,44 @@ button[data-order="true"]::after {
 transform: translateY(-50%) rotate(0deg);
 }
 
-.skin-1 .breadcrumbs {
-background-color: #333;
-}
+.skin-1 .breadcrumbs { background-color: #333; }
 
-.page-content {
-    background-color: #444;
-}
+.page-content { background-color: #444; }
 
 .main-container:before { background-color: #444; }
 
 table.bg-red { background: #ff0000; }
 
-pre code, table {
-background-color: #444;
-background:#444;
-}
+pre code, table { background-color: #444; background:#444; }
 
 table-striped{ background:#444; }
+
+.table > thead > tr{ background-image: linear-gradient(to bottom,#444 0,#999 100%); color: #ffffff; }
 
 .alert-info{ background-color: #d7effbd6; }
 
 /* ANASAYFA */
+
 .profile-info-row:first-child{ background-color: #444; }
+
 .profile-info-row:first-child .profile-info-name, .profile-info-row:first-child .profile-info-value { background-color: #333; }
+
 .profile-user-info-striped { background-color: #444; }
+
 .profile-user-info-striped .profile-info-name { background-color: #333;color:#aaa; }
+
 .profile-info-value{ background-color: #444; }
+
 .alert-danger { background-color: #444;color: #ff1414; }
+
 .btn.btn-white, .btn.btn-white.no-hover:active, .btn.btn-white.no-hover:hover {    background-color: #444 !important; }
+
 .profile-info-value.text-center{ background-color: #444 !important; color:#7fb3f3 !important;}
 
-.hrcgreen { color: #05ec05; }
+.hrcgreen{ color: #05ec05 !important; }
+
+
+
 
 ` );//END GM_addStyle
 
@@ -129,7 +135,6 @@ if(window.location.href === "http://obis.ktun.edu.tr/Ogrenci/SonYilNotlari" || w
                 var sonuc = parseInt( table.rows[parseInt(r)].cells[4].innerHTML) * 0.4;
                 var aa = (82 - sonuc) / 0.6;
                 var cc = (50 - sonuc) / 0.6;
-                
                 if(!isNaN(sonuc)){
                     table.rows[parseInt(r)].cells[5].innerHTML = parseInt(Math.round(sonuc)).toString();
                     if(aa > 100){
