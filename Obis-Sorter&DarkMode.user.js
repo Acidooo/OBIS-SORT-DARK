@@ -129,9 +129,15 @@ if(window.location.href === "http://obis.ktun.edu.tr/Ogrenci/SonYilNotlari" || w
                 var sonuc = parseInt( table.rows[parseInt(r)].cells[4].innerHTML) * 0.4;
                 var aa = (82 - sonuc) / 0.6;
                 var cc = (50 - sonuc) / 0.6;
+                
                 if(!isNaN(sonuc)){
                     table.rows[parseInt(r)].cells[5].innerHTML = parseInt(Math.round(sonuc)).toString();
-                    table.rows[parseInt(r)].cells[6].innerHTML = parseInt(Math.round(aa)).toString();
+                    if(aa >= 100){
+                        table.rows[parseInt(r)].cells[6].innerHTML = "Maalesef";
+                    }
+                    else{
+                        table.rows[parseInt(r)].cells[6].innerHTML = parseInt(Math.round(aa)).toString();
+                    }
                     table.rows[parseInt(r)].cells[7].innerHTML = parseInt(Math.round(cc)).toString();
                 }
             }
