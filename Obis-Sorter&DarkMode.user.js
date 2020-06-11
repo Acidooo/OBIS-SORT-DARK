@@ -101,6 +101,8 @@ background:#444;
 
 table-striped{ background:#444; }
 
+.alert-info{ backgroud-color: #d7effbd6; }
+
 /* ANASAYFA */
 .profile-info-row:first-child{ background-color: #444; }
 .profile-info-row:first-child .profile-info-name, .profile-info-row:first-child .profile-info-value { background-color: #444; }
