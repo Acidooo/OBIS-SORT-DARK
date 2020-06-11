@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Obis:Sorter&DarkMode
 // @namespace    https://github.com/Acidooo/obis-dark-mode
-// @version      2.6
+// @version      2.7
 // @description  try to take over the world!
 // @author       Acido
 // @match        *://*.ktun.edu.tr/Ogrenci/*
@@ -98,6 +98,7 @@ background-color: #444;
 background:#444;
 }
 
+
 table-striped{ background:#444; }
 
 /* ANASAYFA */
@@ -107,6 +108,7 @@ profile-info-row:first-child{ background-color: #444; }
 .profile-user-info-striped .profile-info-name { background-color: #444;color:#aaa; }
 .profile-info-value{ background-color: #444; }
 .alert-danger { background-color: #444;color: #ff1414; }
+.btn.btn-white, .btn.btn-white.no-hover:active, .btn.btn-white.no-hover:hover { background-color: #444 }
 
 ` );//END GM_addStyle
 
