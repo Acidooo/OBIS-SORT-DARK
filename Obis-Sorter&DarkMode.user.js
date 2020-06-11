@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Obis:Sorter&DarkMode
-// @version      2.9.3.3
+// @version      2.9.3.4
 // @description  try to take over the world!
 // @author       Acido
 // @match        *://*.ktun.edu.tr/Ogrenci/*
@@ -9,6 +9,8 @@
 // @grant        GM_addStyle
 // ==/UserScript==
 /*jshint esversion: 6 */
+/* eslint no-console: ["error", { allow: ["warn", "error"] }] */
+
 
 
 
@@ -153,7 +155,7 @@ try {
     }
 }
 catch(err) {
-    console.log(err);
+    console.warn("obis script:" + err);
 }
 
 /* document.getElementById("dynamic-table").style.backgroundImage="url('https://image.prntscr.com/image/RGfyz2IvSViDS4gsa8Pvvg.png')";
