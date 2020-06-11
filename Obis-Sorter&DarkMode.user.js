@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Obis:Sorter&DarkMode
-// @version      2.9.3
+// @version      2.9.3.1
 // @description  try to take over the world!
 // @author       Acido
 // @match        *://*.ktun.edu.tr/Ogrenci/*
@@ -125,7 +125,7 @@ if(window.location === "http://obis.ktun.edu.tr/Ogrenci/SonYilNotlari" || window
     for (var r = 0, n = table.rows.length; r < n; r++) {
         for (var c = 0, m = table.rows[r].cells.length; c < m; c++) {
             //             console.log(table.rows[r].cells[4].innerHTML)
-            if( parseInt(table.rows[r].cells[4].innerHTML) !== null )
+            if( parseInt(table.rows[parseInt(r)].cells[4].innerHTML) !== null )
             {
                 var sonuc = parseInt( table.rows[r].cells[4].innerHTML) * 0.4;
                 var aa = (82 - sonuc) / 0.6;
