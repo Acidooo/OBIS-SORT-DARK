@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Obis:Sorter&DarkMode
-// @version      2.9.3.1
+// @version      2.9.3.2
 // @description  try to take over the world!
 // @author       Acido
 // @match        *://*.ktun.edu.tr/Ogrenci/*
@@ -123,17 +123,17 @@ var table = document.getElementById("dynamic-table");
 
 if(window.location === "http://obis.ktun.edu.tr/Ogrenci/SonYilNotlari" || window.location === "http://obis2.ktun.edu.tr/Ogrenci/SonYilNotlari" || window.location === "http://obis3.ktun.edu.tr/Ogrenci/SonYilNotlari" ){
     for (var r = 0, n = table.rows.length; r < n; r++) {
-        for (var c = 0, m = table.rows[r].cells.length; c < m; c++) {
+        for (var c = 0, m = table.rows[parseInt(r)].cells.length; c < m; c++) {
             //             console.log(table.rows[r].cells[4].innerHTML)
             if( parseInt(table.rows[parseInt(r)].cells[4].innerHTML) !== null )
             {
-                var sonuc = parseInt( table.rows[r].cells[4].innerHTML) * 0.4;
+                var sonuc = parseInt( table.rows[parseInt(r)].cells[4].innerHTML) * 0.4;
                 var aa = (82 - sonuc) / 0.6;
                 var cc = (50 - sonuc) / 0.6;
                 if(!isNaN(sonuc)){
-                    table.rows[r].cells[5].innerHTML = parseInt(Math.round(sonuc)).toString();
-                    table.rows[r].cells[6].innerHTML = parseInt(Math.round(aa)).toString();
-                    table.rows[r].cells[7].innerHTML = parseInt(Math.round(cc)).toString();
+                    table.rows[parseInt(r)].cells[5].innerHTML = parseInt(Math.round(sonuc)).toString();
+                    table.rows[parseInt(r)].cells[6].innerHTML = parseInt(Math.round(aa)).toString();
+                    table.rows[parseInt(r)].cells[7].innerHTML = parseInt(Math.round(cc)).toString();
                 }
             }
         }
