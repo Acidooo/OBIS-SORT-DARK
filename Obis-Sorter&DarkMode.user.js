@@ -153,7 +153,7 @@ try {
     }
 }
 catch(err) {
-    Console.log(err);
+    console.log(err);
 }
 
 /* document.getElementById("dynamic-table").style.backgroundImage="url('https://image.prntscr.com/image/RGfyz2IvSViDS4gsa8Pvvg.png')";
