@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Obis:Sorter&DarkMode
-// @version      2.9
+// @version      2.9.1
 // @description  try to take over the world!
 // @author       Acido
 // @match        *://*.ktun.edu.tr/Ogrenci/*
@@ -112,6 +112,8 @@ table-striped{ background:#444; }
 .alert-danger { background-color: #444;color: #ff1414; }
 .btn.btn-white, .btn.btn-white.no-hover:active, .btn.btn-white.no-hover:hover {    background-color: #444 !important; }
 .profile-info-value.text-center{ background-color: #444 !important; color:#7fb3f3 !important;}
+
+.hrcgreen { color: #05ec05; }
 
 ` );//END GM_addStyle
 
