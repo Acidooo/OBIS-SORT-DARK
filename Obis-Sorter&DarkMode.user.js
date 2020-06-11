@@ -232,11 +232,9 @@ function setup(table) {
         // Debugging
         /* console.log(map.call(sorted, function(row) {
                 return row.querySelectorAll('td')[index].innerText;
-            }));*/
-    
+            }));*/    
         // Clear the table contents
-        body.innerHTML = "";
-    
+        body.innerHTML = "";    
         // Re-inject the sorted rows
         each.call(sorted, function (row) {
             body.appendChild(row);
@@ -252,7 +250,6 @@ function setup(table) {
     function sorter(index, order) {
         // Loop through each row to build a list of cells in column
         var rows = body.querySelectorAll("tr");
-
         // Sort by content
         return sort.call(slice.call(rows, 0), function (a, b) {
             // Get text content
