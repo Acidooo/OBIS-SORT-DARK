@@ -1,6 +1,7 @@
 // ==UserScript==
 // @name         Obis:Sorter&DarkMode
-// @version      2.9.3.13
+// @icon         https://lms.ktun.edu.tr/pluginfile.php/1/theme_remui/faviconurl/1589613162/imageedit_1_7336125810.png
+// @version      2.9.3.14
 // @description  try to take over the world!
 // @author       Acido
 // @match        *://*.ktun.edu.tr/Ogrenci/*
