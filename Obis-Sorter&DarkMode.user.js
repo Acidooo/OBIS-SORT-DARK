@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Obis:Sorter&DarkMode
-// @version      2.9.3.12
+// @version      2.9.3.13
 // @description  try to take over the world!
 // @author       Acido
 // @match        *://*.ktun.edu.tr/Ogrenci/*
@@ -165,6 +165,12 @@ try {
 catch(err) {
     console.warn("obis script:" + err);
 }
+
+var footer = document.querySelectorAll("div.footer-content");
+footer[0].innerHTML = `<p style="font-size: 12px">
+           Dark Mode by
+           <a href="https://github.com/Acidooo" style="color:#5CFF00" >Acido</a>
+         </p>`
 
 /* document.getElementById("dynamic-table").style.backgroundImage="url('https://image.prntscr.com/image/RGfyz2IvSViDS4gsa8Pvvg.png')";
 
